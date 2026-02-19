@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mcp-websearch:
+    build: .
+    container_name: mcp-websearch
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./cache:/app/cache
+    # ports:
+    #   - "8000:8000"  # Descomentar si necesitas exponer puerto
